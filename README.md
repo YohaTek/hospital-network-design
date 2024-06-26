@@ -34,4 +34,4 @@ This project demonstrates a comprehensive network design for a hospital system w
 ## Getting Started
 Clone this repository to explore the network design:
 ```bash
-git clone https://github.com/yourusername/hospital-network-design.git
+git clone https://github.com/YohaTek/hospital-network-design.git
