@@ -1,0 +1,33 @@
+# Operating system files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# Editor and IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.bak
+*.orig
+
+# Network simulator projects and device archives
+# (Packet Tracer saves, GNS3 projects, exported device configs with secrets)
+*.pkt
+*.pka
+*.pkt.bak
+*.gns3
+*.gns3project
+*.gns3project.gns3
+
+# Packet captures and logs produced while testing the lab
+*.pcap
+*.pcapng
+*.log
+captures/
+
+# Topology exports that are regenerated from diagrams/
+diagrams/export/
