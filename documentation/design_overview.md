@@ -49,3 +49,4 @@ The network architecture is based on a three-tier model comprising the Core, Dis
 
 ### Wireless Network
 - **Wireless Access Points (WPA2)**: Provide secure wireless connectivity to devices within the
+  hospital campus, using WPA2 encryption on all service set identifiers.

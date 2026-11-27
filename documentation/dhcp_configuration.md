@@ -204,4 +204,4 @@ show ip dhcp server statistics
 
 By following these configurations, the DHCP server will dynamically allocate IP addresses to devices within each VLAN, ensuring efficient IP address management and network connectivity.
 
-This document provides a detailed overview and configuration steps for setting up DHCP on your net
+This document provides a detailed overview and configuration steps for setting up DHCP on your network.
