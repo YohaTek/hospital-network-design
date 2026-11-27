@@ -106,6 +106,7 @@ The DHCP server will be configured to provide dynamic IP address assignment for 
 
 Exclude IP addresses that will be assigned statically to network devices such as servers, routers, and switches.
 
+```bash
 ip dhcp excluded-address 192.168.0.1 192.168.0.10
 ip dhcp excluded-address 192.168.0.65 192.168.0.75
 ip dhcp excluded-address 192.168.0.129 192.168.0.139
@@ -116,71 +117,100 @@ ip dhcp excluded-address 192.168.1.129 192.168.1.139
 ip dhcp excluded-address 192.168.1.193 192.168.1.203
 ip dhcp excluded-address 192.168.2.1 192.168.2.10
 ip dhcp excluded-address 192.168.2.65 192.168.2.75
+```
 
 
-DHCP Configuration for Branch Office
-DHCP Configuration on Router
-Step 1: Define DHCP Pools for Each VLAN
-Administration VLAN (VLAN 110)
+## DHCP Configuration for Branch Office
 
+### DHCP Configuration on Router
+
+#### Step 1: Define DHCP Pools for Each VLAN
+
+1. **Administration VLAN (VLAN 110)**
+
+```bash
 ip dhcp pool VLAN110_ADMIN_B
  network 192.168.4.0 255.255.255.224
  default-router 192.168.4.1
  dns-server 8.8.8.8 8.8.4.4
  domain-name branch.example.com
-Emergency VLAN (VLAN 120)
+```
 
+2. **Emergency VLAN (VLAN 120)**
+
+```bash
 ip dhcp pool VLAN120_EMERGENCY_B
  network 192.168.4.32 255.255.255.224
  default-router 192.168.4.33
  dns-server 8.8.8.8 8.8.4.4
  domain-name branch.example.com
-Outpatient VLAN (VLAN 130)
+```
 
+3. **Outpatient VLAN (VLAN 130)**
+
+```bash
 ip dhcp pool VLAN130_OUTPATIENT_B
  network 192.168.4.64 255.255.255.224
  default-router 192.168.4.65
  dns-server 8.8.8.8 8.8.4.4
  domain-name branch.example.com
-Inpatient VLAN (VLAN 140)
+```
 
+4. **Inpatient VLAN (VLAN 140)**
+
+```bash
 ip dhcp pool VLAN140_INPATIENT_B
  network 192.168.4.96 255.255.255.224
  default-router 192.168.4.97
  dns-server 8.8.8.8 8.8.4.4
  domain-name branch.example.com
-Radiology VLAN (VLAN 150)
+```
 
+5. **Radiology VLAN (VLAN 150)**
+
+```bash
 ip dhcp pool VLAN150_RADIOLOGY_B
  network 192.168.4.128 255.255.255.224
  default-router 192.168.4.129
  dns-server 8.8.8.8 8.8.4.4
  domain-name branch.example.com
-Laboratory VLAN (VLAN 160)
+```
 
+6. **Laboratory VLAN (VLAN 160)**
+
+```bash
 ip dhcp pool VLAN160_LAB_B
  network 192.168.4.160 255.255.255.224
  default-router 192.168.4.161
  dns-server 8.8.8.8 8.8.4.4
  domain-name branch.example.com
-Pharmacy VLAN (VLAN 170)
+```
 
+7. **Pharmacy VLAN (VLAN 170)**
+
+```bash
 ip dhcp pool VLAN170_PHARMACY_B
  network 192.168.4.192 255.255.255.224
  default-router 192.168.4.193
  dns-server 8.8.8.8 8.8.4.4
  domain-name branch.example.com
-IT Department VLAN (VLAN 180)
+```
 
+8. **IT Department VLAN (VLAN 180)**
+
+```bash
 ip dhcp pool VLAN180_IT_B
  network 192.168.4.224 255.255.255.224
  default-router 192.168.4.225
  dns-server 8.8.8.8 8.8.4.4
  domain-name branch.example.com
-Step 2: Exclude Static IP Addresses
+```
+
+#### Step 2: Exclude Static IP Addresses
+
 Exclude IP addresses that will be assigned statically to network devices such as servers, routers, and switches.
 
-
+```bash
 ip dhcp excluded-address 192.168.4.1 192.168.4.10
 ip dhcp excluded-address 192.168.4.33 192.168.4.43
 ip dhcp excluded-address 192.168.4.65 192.168.4.75
@@ -189,18 +219,29 @@ ip dhcp excluded-address 192.168.4.129 192.168.4.139
 ip dhcp excluded-address 192.168.4.161 192.168.4.171
 ip dhcp excluded-address 192.168.4.193 192.168.4.203
 ip dhcp excluded-address 192.168.4.225 192.168.4.235
-Verification
+```
+
+## Verification
+
 To verify the DHCP configuration and ensure it is functioning correctly, use the following commands:
 
-Show DHCP Leases
+### Show DHCP Leases
 
+```bash
 show ip dhcp binding
-Show DHCP Pool Statistics
+```
 
+### Show DHCP Pool Statistics
+
+```bash
 show ip dhcp pool
-Show DHCP Server Statistics
+```
 
+### Show DHCP Server Statistics
+
+```bash
 show ip dhcp server statistics
+```
 
 By following these configurations, the DHCP server will dynamically allocate IP addresses to devices within each VLAN, ensuring efficient IP address management and network connectivity.
 
